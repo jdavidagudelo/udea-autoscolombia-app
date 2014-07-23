@@ -22,10 +22,11 @@
             <form name="clienteForm" >
                 <fieldset class="form-group">
                     <label>Tipo de Documento: </label>
-                    <select id="tipoDocumento" class = "form-control"  width="400dp">
+                    <select id="tipoDocumento" class = "form-control"  width="400dp" ng-controller="TipoDocumentoController as tipoDocumentoCtrl">
                         <option>Tipo de Documento</option>
-                        <option>Cedula</option>
-                        <option>Tarjeta de Identidad</option>
+			
+                        <option ng-repeat="tipoDocumento in tipoDocumentoCtrl.tiposDocumento" value="{{tipoDocumento.id}}">{{tipoDocumento.name}}</option>
+                       
                     </select>
                 </fieldset>
 
@@ -50,12 +51,11 @@
                 <fieldset class="form-group">
                     <input type="text" id="segundoApellido" class="form-control">
                 </fieldset>
-                <label>Tipo: </label>
+                <label>Tipo de Afiliaci&oacute;n: </label>
                 <fieldset class="form-group">
-                    <select id="tipo" class="form-control">
-                        <option>Tipo</option>
-                        <option>Afiliado</option>
-                        <option>Asegurado</option>
+                    <select id="tipo" class="form-control" ng-controller="TipoAfiliacionController as tipoAfiliacionCtrl">
+                        <option>Tipo de Afiliaci&oacute;n</option>
+                        <option ng-repeat="tipoAfiliacion in tipoAfiliacionCtrl.tiposAfiliacion" value="{{tipoAfiliacion.id}}">{{tipoAfiliacion.name}}</option>
                     </select></fieldset>
                 <label>Fecha de Nacimiento: </label>
                 <fieldset class="form-group">
@@ -68,10 +68,9 @@
 
             <label>Tipo: </label>
             <fieldset class="form-group">
-                <select id="tipoVehiculo" class="form-control">
-                    <option>Tipo</option>
-                    <option>Afiliado</option>
-                    <option>Asegurado</option>
+                <select id="tipoVehiculo" class="form-control"  ng-controller="TipoVehiculoController as tipoVehiculoCtrl">
+                    <option>Tipo Vehículo</option>
+                    <option ng-repeat="tipoVehiculo in tipoVehiculoCtrl.tiposVehiculo" value="{{tipoVehiculo.id}}">{{tipoVehiculo.name}}</option>
                 </select></fieldset>
             <label>Referencia: </label>
             <fieldset class="form-group">
