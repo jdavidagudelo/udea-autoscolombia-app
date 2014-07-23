@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html ng-app="autos">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script src="js/app.js"></script>
+
+    </head>
+    <body >
+
+    <section ng-controller="PanelController as panel" >
+        <ul class = "nav nav-pills">
+            <li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Datos del Cliente</a></li>
+            <li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Datos del Veh&iacute;culo</a></li>
+            <li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Datos del Incidente</a></li>
+        </ul>
+        <div id="datosCliente" class="panel" ng-show="panel.isSelected(1)">
+            <h1>Datos del Cliente</h1>
+            <form name="clienteForm" >
+                <fieldset class="form-group">
+                    <label>Tipo de Documento: </label>
+                    <select id="tipoDocumento" class = "form-control"  width="400dp">
+                        <option>Tipo de Documento</option>
+                        <option>Cedula</option>
+                        <option>Tarjeta de Identidad</option>
+                    </select>
+                </fieldset>
+
+                <label>N&uacute;mero de Documento: </label>
+                <fieldset class="form-group">
+                    <input type="number" id="numeroDocumento" class="form-control" placeholder="Ingrese el tipo de documento del cliente" title="Review"  required="required"  width="400dp">
+                </fieldset>
+
+                <label>Primer Nombre: </label>
+                <fieldset class="form-group">
+                    <input type="text" id="primerNombre" class="form-control">
+                </fieldset>
+                <label>Segundo Nombre: </label>
+                <fieldset class="form-group">
+                    <input type="text" id="segundoNombre" class="form-control">
+                </fieldset>
+                <label>Primer Apellido: </label>
+                <fieldset class="form-group">
+                    <input type="text" id="primerApellido" class="form-control">
+                </fieldset>
+                <label>Segundo Apellido: </label>
+                <fieldset class="form-group">
+                    <input type="text" id="segundoApellido" class="form-control">
+                </fieldset>
+                <label>Tipo: </label>
+                <fieldset class="form-group">
+                    <select id="tipo" class="form-control">
+                        <option>Tipo</option>
+                        <option>Afiliado</option>
+                        <option>Asegurado</option>
+                    </select></fieldset>
+                <label>Fecha de Nacimiento: </label>
+                <fieldset class="form-group">
+                    <input type="date" id="fechaNacimiento" class="form-control">
+                </fieldset>
+            </form>
+        </div>
+        <div id="datosVehiculo" class = "panel" ng-show="panel.isSelected(2)">
+            <h1>Datos del Veh&iacute;culo</h1>
+
+            <label>Tipo: </label>
+            <fieldset class="form-group">
+                <select id="tipoVehiculo" class="form-control">
+                    <option>Tipo</option>
+                    <option>Afiliado</option>
+                    <option>Asegurado</option>
+                </select></fieldset>
+            <label>Referencia: </label>
+            <fieldset class="form-group">
+                <input type="text" id="referencia" class="form-control"></fieldset>
+            <label>N&uacute;mero de P&oacute;liza: </label>
+            <fieldset class="form-group">
+                <input type="text" id="numeroPoliza" class="form-control"></fieldset>
+            <label>Fecha Inicio Vigencia: </label>
+            <fieldset class="form-group">
+                <input type="date" id="fechaInicioVigencia" class="form-control"></fieldset>
+            <label>Fecha Fin Vigencia: </label>
+            <fieldset class="form-group">
+                <input type="date" id="fechaFinVigencia" class="form-control"></fieldset>
+        </div>
+        <div id="datosIncidente" class = "panel" ng-show="panel.isSelected(3)">
+            <h1>Datos del Incidente</h1>
+            <label>Fecha del Incidente: </label>
+            <fieldset class="form-group">
+                <input type="date" id="fechaIncidente" class="form-control"></fieldset>
+            <label>Motivo del Incidente</label>
+            <fieldset class="form-group">
+                <input type="text" id="motivoIncidente" class="form-control"></fieldset>
+            <label>Descripci&oacute;n</label>
+            <fieldset class="form-group">
+                <input type="text" id="descripcion" class="form-control"></fieldset>
+            <label>Valor Rearaci&oacute;n Aproximado</label>
+            <fieldset class="form-group">
+                <input type="text" id="valorReparacion" class="form-control"></fieldset>
+            <label>Culpable</label>
+            <fieldset class="form-group">
+                <input type="text" id="culpable" class="form-control"></fieldset>
+            <label>Lugar del Incidente</label>
+            <fieldset class="form-group">
+                <input type="text" id="lugarIncidente" class="form-control"></fieldset>
+
+        </div>
+    </section>
+</body>
+</html>
