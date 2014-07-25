@@ -3,9 +3,7 @@
  */
 (function() {
     var app = angular.module('autos', []);
-    app.controller("StoreController", function() {
-        this.products = phones;
-    });
+    //controller para los tab
     app.controller("PanelController", function() {
         this.tab = 1;
         this.selectTab = function(setTab) {
@@ -15,33 +13,34 @@
             return this.tab === checkTab;
         };
     });
+    app.controller("IncidenteController", function()
+    {
+        this.incidente = {};
+        this.addIncidente = function(){
+            //aqui se debe consumir el servicio para almacenar los incidentes
+            incidentes.push(this.incidente);
+            alert(JSON.stringify(incidentes));
+            this.incidente = {};
+        };
+    });
     app.controller("TipoDocumentoController", function()
     {
+        //aqui se debe consumir el servicio de tipos de documento
         this.tiposDocumento = tiposDocumentoDummy;
     });
     app.controller("TipoVehiculoController", function()
     {
+        //aqui se debe consumir el servicio de tipo de vehiculo            
         this.tiposVehiculo = tiposVehiculoDummy;
     });
     app.controller("TipoAfiliacionController", function()
     {
+        //aqui se debe consumir el servicio de tipos de clientes
         this.tiposAfiliacion = tiposAfiliacionDummy;
     });
-    app.controller("ReviewController", function() {
-        this.review = {};
-        this.addReview = function(product)
-        {
-            this.review.createdOn = Date.now();
-            product.reviews.push(this.review);
-            this.review = {};
-        };
-    });
-    app.directive('productTitle', function() {
-        return {
-            restrict: 'E',
-            templateUrl: "product-title.html"
-        };
-    });
+ 
+    //Ejemplos del JSON esperado por el FrontEnd
+    var incidentes = [];
     var cliente = {
         tipoDocumento: {id: 1, name: "Cedula"},
         numeroDocumento: 1037524435,
