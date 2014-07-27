@@ -28,6 +28,12 @@
         //aqui se debe consumir el servicio de tipos de documento
         this.tiposDocumento = tiposDocumentoDummy;
     });
+
+    app.controller("MotivoIncidenteController", function()
+    {
+        //aqui se debe consumir el servicio de motivos de incidente
+        this.motivosIncidente = motivosIncidentesDummy;
+    });
     app.controller("TipoVehiculoController", function()
     {
         //aqui se debe consumir el servicio de tipo de vehiculo            
@@ -52,12 +58,14 @@
         fechaNacimiento: "12/03/1990"
     };
     var tiposDocumentoDummy = [
-        {id: 1, name: "Cedula"}, {id: 2, name: "Tarjeta de Identidad"}, {id: 3, name: "Registro Civil"}, {id: 4, name: "Pasaporte"}
+        {id: "C", name: "Cedula"}, {id: "T", name: "Tarjeta de Identidad"}, {id: "R", name: "Registro Civil"}, {id: "P", name: "Pasaporte"}
     ];
     var tiposAfiliacionDummy = [
         {id: 1, name: "Afiliado"}, {id: 2, name: "Asegurado"}
     ];
     var tiposVehiculoDummy = [{id: 1, name: "Campero"}, {id: 2, name: "Automóvil"}, {id: 3, name: "Moto"}];
+    var motivosIncidentesDummy= [{id:1, name:"Exceso de velocidad"}, {id:2, name:"Imprudencia del conductor"}, {id:3, name:"Imprudencia del peatón"}, {id:4, name:"Ebriedad del conductor"},
+    {id:5, name:"Imprudencia del pasajero"}, {id:6, name:"Exceso de carga"}, {id:7, name:"Desacato a las señales de tránsito"}, {id:8, name:"Falla mecánica"}, {id:9, name:"Falta de luces, mal estado en las vías, mala señalización y otros."}];
     var vehiculo =
             {
                 tipoVehivulo: {id: 1, name: "Campero"},
