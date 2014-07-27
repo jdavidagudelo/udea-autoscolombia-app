@@ -102,9 +102,10 @@
             <label>Descripci&oacute;n</label>
             <fieldset class="form-group">
                 <input type="text" id="descripcion" class="form-control" ng-model="incidenteCtrl.incidente.descripcion"></fieldset>
-            <label>Valor Reparaci&oacute;n Aproximado</label>
+            <label>Valor Reparaci&oacute;n Aproximado ($)</label>
             <fieldset class="form-group">
-                <input type="number" id="valorReparacion" class="form-control" ng-model="incidenteCtrl.incidente.valorAproximadoReparacion"></fieldset>
+                <div ng-controller="valorreparacionCtrl">
+                <input type="text" id="valorReparacion" class="form-control" ng-model="incidenteCtrl.incidente.valorAproximadoReparacion" real-time-currency /> 
             <label>Culpable</label>
             <fieldset class="form-group">
                 <input type="radio" name="culpable" value="SI" ng-model="incidenteCtrl.incidente.culpable">  SI<br>

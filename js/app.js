@@ -23,6 +23,81 @@
             this.incidente = {};
         };
     });
+
+//Código para formatear el campo de valor reparación de incidente como un valor monetario en pesos
+
+app.controller('valorreparacionCtrl', function () {});
+
+app.directive('realTimeCurrency', function ($filter, $locale) {
+    var decimalSep = $locale.NUMBER_FORMATS.DECIMAL_SEP;
+    var toNumberRegex = new RegExp('[^0-9\\' + decimalSep + ']', 'g');
+    var trailingZerosRegex = new RegExp('\\' + decimalSep + '0+$');
+    var filterFunc = function (value) {
+        return $filter('currency')(value);
+    };
+
+    function getCaretPosition(input){
+        if (!input) return 0;
+        if (input.selectionStart !== undefined) {
+            return input.selectionStart;
+        } else if (document.selection) {
+            input.focus();
+            var selection = document.selection.createRange();
+            selection.moveStart('character', input.value ? -input.value.length : 0);
+            return selection.text.length;
+        }
+        return 0;
+    }
+
+    function setCaretPosition(input, pos){
+        if (!input) return 0;
+        if (input.offsetWidth === 0 || input.offsetHeight === 0) {
+            return; //Manejo del input
+        }
+        if (input.setSelectionRange) {
+            input.focus();
+            input.setSelectionRange(pos, pos);
+        }
+        else if (input.createTextRange) {
+            //Separación de caracteres
+            var range = input.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', pos);
+            range.moveStart('character', pos);
+            range.select();
+        }
+    }
+    
+    function toNumber(currencyStr) {
+        return parseFloat(currencyStr.replace(toNumberRegex, ''), 10);
+    }
+
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function postLink(scope, elem, attrs, valorreparacionCtrl) {    
+            valorreparacionCtrl.$formatters.push(filterFunc);
+            valorreparacionCtrl.$parsers.push(function (newViewValue) {
+                var oldModelValue = valorreparacionCtrl.$modelValue;
+                var ModelValue = toNumber(newViewValue);
+                valorreparacionCtrl.$viewValue = filterFunc(ModelValue);
+                var pos = getCaretPosition(elem[0]);
+                elem.val(valorreparacionCtrl.$viewValue);
+                var newPos = pos + valorreparacionCtrl.$viewValue.length -
+                                   newViewValue.length;
+                if ((oldModelValue === undefined) || isNaN(oldModelValue)) {
+                    newPos -= 3;
+                }
+                setCaretPosition(elem[0], newPos);
+                return ModelValue;
+            });
+        }
+    };
+});
+
+
+//termina cod
+
     app.controller("TipoDocumentoController", function()
     {
         //aqui se debe consumir el servicio de tipos de documento
