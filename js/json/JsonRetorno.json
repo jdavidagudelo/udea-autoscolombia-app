@@ -1,0 +1,20 @@
+{
+    "Cliente": {
+        "TipoDocumento": "C",
+        "NumeroDocumento": "1234567890",
+        "PriemerNombre": "Daniel",
+        "SegundoNombre": "Alexander",
+        "PrimerApellido": "Arango",
+        "SegundoApellido": "Arboleda",
+        "Tipo": "Afiliado",
+        "FechaNacimiento": "20/09/1991",
+        "FechaExpDoc": "20/10/2009"
+    },
+    "Vehiculo": {
+        "Tipo": "Automovil",
+        "Referencia": "",
+        "NumeroPoliza": "123456",
+        "FechaInicioVigenciaP": "01/01/2014",
+        "FechaFinVigenciaP": "01/01/2015"
+    }
+}

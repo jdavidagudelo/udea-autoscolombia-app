@@ -1,0 +1,40 @@
+{
+    "Motivo": [
+        {
+            "Codigo": "1",
+            "Texto": "Exceso de velocidad"
+        },
+        {
+            "Codigo": "2",
+            "Texto": "Imprudencia del conductor"
+        },
+        {
+            "Codigo": "3",
+            "Texto": "Imprudencia del peatón"
+        },
+        {
+            "Codigo": "4",
+            "Texto": "Ebriedad del conductor"
+        },
+        {
+            "Codigo": "5",
+            "Texto": "Imprudencia del pasajero"
+        },
+        {
+            "Codigo": "6",
+            "Texto": "Exceso de carga"
+        },
+        {
+            "Codigo": "7",
+            "Texto": "Desacato a las señales de tránsito"
+        },
+        {
+            "Codigo": "8",
+            "Texto": "Falla mecánica"
+        },
+        {
+            "Codigo": "9",
+            "Texto": "Falta de luces, mal estado de las vías, mala señalización y otros"
+        }
+    ]
+}

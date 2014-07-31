@@ -1,0 +1,10 @@
+{
+    "Incidente": {
+        "FechaIncidente": "03/04/2014",
+        "MotivoIncidente": "3",
+        "Descripcion": "Un señor se me metió en el camino",
+        "ValorReparacionAprox": "500.000",
+        "Culpable": "No",
+        "LugarIncidente": "Calle 45 #23-10"
+    }
+}

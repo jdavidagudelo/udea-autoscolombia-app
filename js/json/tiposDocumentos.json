@@ -1,0 +1,22 @@
+[
+        {
+            "Codigo": "C",
+            "TipoDoc": "Cedula de Ciudadania"
+        },
+        {
+            "Codigo": "T",
+            "TipoDoc": "Tarjeta de Identidad"
+        },
+        {
+            "Codigo": "CE",
+            "TipoDoc": "Cedula de Extranjeria"
+        },
+        {
+            "Codigo": "P",
+            "TipoDoc": "Pasaporte"
+        },
+        {
+            "Codigo": "R",
+            "TipoDoc": "Registro Civil"
+        }
+    ]
