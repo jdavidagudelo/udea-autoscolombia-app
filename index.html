@@ -95,13 +95,17 @@
                 <input type="date" id="fechaIncidente" class="form-control" ng-model="incidenteCtrl.incidente.fechaIncidente"></fieldset>
             <label>Motivo del Incidente</label>
             <fieldset class="form-group">
-                <input type="text" id="motivoIncidente" class="form-control" ng-model="incidenteCtrl.incidente.motivoIncidente"></fieldset>
+                <select id="motivoIncidente" class="form-control"  ng-controller="MotivoIncidenteController as motivoIncidenteCtrl" ng-model="incidenteCtrl.incidente.motivoIncidente.id">
+                    <option value="">Motivo de Incidente</option>
+                    <option ng-repeat=" motivoIncidente in motivoIncidenteCtrl.motivosIncidente" value="{{motivoIncidente.id}}">{{motivoIncidente.name}}</option>
+                </select></fieldset>
             <label>Descripci&oacute;n</label>
             <fieldset class="form-group">
                 <input type="text" id="descripcion" class="form-control" ng-model="incidenteCtrl.incidente.descripcion"></fieldset>
-            <label>Valor Reparaci&oacute;n Aproximado</label>
+            <label>Valor Reparaci&oacute;n Aproximado ($)</label>
             <fieldset class="form-group">
-                <input type="number" id="valorReparacion" class="form-control" ng-model="incidenteCtrl.incidente.valorAproximadoReparacion"></fieldset>
+                <div ng-controller="valorreparacionCtrl">
+                <input type="text" id="valorReparacion" class="form-control" ng-model="incidenteCtrl.incidente.valorAproximadoReparacion" real-time-currency /> 
             <label>Culpable</label>
             <fieldset class="form-group">
                 <input type="radio" name="culpable" value="SI" ng-model="incidenteCtrl.incidente.culpable">  SI<br>
